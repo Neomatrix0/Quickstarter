@@ -46,11 +46,11 @@ Crowdfundr is a crowdfunding platform where startuppers can present their projec
 - Add social sharing features for projects.
 -->
 
-# **Crowdfundr - Crowdfunding Platform**
+# **Quickstarter - Crowdfunding Platform**
 
 ## **Project Overview**
 
-Crowdfundr is a crowdfunding platform built with ASP.NET Core MVC, Entity Framework, and Identity Framework. The platform allows users to create, fund, and manage projects with role-based access control. The three user roles are:
+Quickstarter is a crowdfunding platform built with ASP.NET Core MVC, Entity Framework, and Identity Framework. The platform allows users to create, fund, and manage projects with role-based access control. The three user roles are:
 - **Admin**: Manages users, projects, and finances.
 - **Startupper**: Can create and manage their projects.
 - **Financier**: Can browse and fund projects. Based on their contributions, they receive perks and badges.
@@ -89,7 +89,7 @@ The site charges a 1% fee on all new fundraising campaigns, which is distributed
 
 | Column Name  | Data Type | Description                         |
 |--------------|-----------|-------------------------------------|
-| UserId       | string    | Primary key                         |
+| UserId       | int    | Primary key                         |
 | FullName     | string    | Full name of the user               |
 | Email        | string    | User's email                        |
 | Role         | string    | User's role (Admin, Startupper, Financier) |
@@ -204,5 +204,5 @@ The site charges a 1% fee on all new fundraising campaigns, which is distributed
 
 ### **2. Clone the Repository**
 ```bash
-git clone https://github.com/yourusername/crowdfundr.git
-cd crowdfundr
+git https://github.com/Neomatrix0/Quickstarter.git
+
