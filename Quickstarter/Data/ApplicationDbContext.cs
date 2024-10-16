@@ -1,7 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-
-namespace Quickstarter.Data;
+using Quickstarter.Models;
 
 public class ApplicationDbContext : IdentityDbContext
 {
@@ -9,6 +8,13 @@ public class ApplicationDbContext : IdentityDbContext
         : base(options)
     {
     }
+    // protected override void OnConfiguring(DbContextOptionsBuilder option)
+    // {
+    //     option.UseSqlite("Data Source=app.db");
+    // }
 
     public DbSet<Project> Projects { get; set; }
+    public DbSet<ApplicationUser> ApplicationUsers { get; set; }
+    public DbSet<Badge> Badges { get; set; }
+    public DbSet<Contribution> Contributions { get; set; }
 }

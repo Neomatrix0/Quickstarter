@@ -1,3 +1,5 @@
+using Quickstarter.Models;
+
 public class Project
 {
     public int ProjectId { get; set; }  // Chiave primaria
@@ -8,6 +10,6 @@ public class Project
     public DateTime CreatedAt { get; set; }
 
     // Relazione con ApplicationUser
-    public string StartupperId { get; set; }
-  //  public ApplicationUser Startupper { get; set; }  // Chi ha creato il progetto
+    public ApplicationUser Startupper { get; set; }  // Chi ha creato il progetto
+    public IEnumerable<Contribution> Contributions { get; set; }
 }

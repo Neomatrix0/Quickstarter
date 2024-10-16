@@ -1,25 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\dev1\\Documents\\Fundingstartup\\Quickstarter\\Quickstarter.csproj": {}
+    "C:\\Users\\Pozzame\\Documents\\Corso_2024\\Fundingstartup\\Quickstarter\\Quickstarter.csproj": {}
   },
   "projects": {
-    "C:\\Users\\dev1\\Documents\\Fundingstartup\\Quickstarter\\Quickstarter.csproj": {
+    "C:\\Users\\Pozzame\\Documents\\Corso_2024\\Fundingstartup\\Quickstarter\\Quickstarter.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\dev1\\Documents\\Fundingstartup\\Quickstarter\\Quickstarter.csproj",
+        "projectUniqueName": "C:\\Users\\Pozzame\\Documents\\Corso_2024\\Fundingstartup\\Quickstarter\\Quickstarter.csproj",
         "projectName": "Quickstarter",
-        "projectPath": "C:\\Users\\dev1\\Documents\\Fundingstartup\\Quickstarter\\Quickstarter.csproj",
-        "packagesPath": "C:\\Users\\dev1\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\dev1\\Documents\\Fundingstartup\\Quickstarter\\obj\\",
+        "projectPath": "C:\\Users\\Pozzame\\Documents\\Corso_2024\\Fundingstartup\\Quickstarter\\Quickstarter.csproj",
+        "packagesPath": "C:\\Users\\Pozzame\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Pozzame\\Documents\\Corso_2024\\Fundingstartup\\Quickstarter\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\dev1\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\Pozzame\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
