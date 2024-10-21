@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -9,9 +10,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Quickstarter.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20241019162005_UpdateProjectModel")]
+    partial class UpdateProjectModel
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "8.0.10");
@@ -221,14 +224,11 @@ namespace Quickstarter.Data.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
-            modelBuilder.Entity("ProjectStartup", b =>
+            modelBuilder.Entity("Project", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("ProjectId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
-
-                    b.Property<string>("ApplicationUserId")
-                        .HasColumnType("TEXT");
 
                     b.Property<string>("CompanyName")
                         .IsRequired()
@@ -260,7 +260,7 @@ namespace Quickstarter.Data.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("Startupper")
+                    b.Property<string>("StartupperId")
                         .IsRequired()
                         .HasColumnType("TEXT");
 
@@ -271,9 +271,9 @@ namespace Quickstarter.Data.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.HasKey("Id");
+                    b.HasKey("ProjectId");
 
-                    b.HasIndex("ApplicationUserId");
+                    b.HasIndex("StartupperId");
 
                     b.ToTable("Projects");
                 });
@@ -325,14 +325,11 @@ namespace Quickstarter.Data.Migrations
                     b.Property<int>("ProjectId")
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("ProjectStartupId")
-                        .HasColumnType("INTEGER");
-
                     b.HasKey("ContributionId");
 
                     b.HasIndex("FinancierId");
 
-                    b.HasIndex("ProjectStartupId");
+                    b.HasIndex("ProjectId");
 
                     b.ToTable("Contributions");
                 });
@@ -399,11 +396,15 @@ namespace Quickstarter.Data.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("ProjectStartup", b =>
+            modelBuilder.Entity("Project", b =>
                 {
-                    b.HasOne("ApplicationUser", null)
+                    b.HasOne("ApplicationUser", "Startupper")
                         .WithMany("Projects")
-                        .HasForeignKey("ApplicationUserId");
+                        .HasForeignKey("StartupperId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Startupper");
                 });
 
             modelBuilder.Entity("Quickstarter.Models.Badge", b =>
@@ -425,15 +426,20 @@ namespace Quickstarter.Data.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("ProjectStartup", "ProjectStartup")
-                        .WithMany()
-                        .HasForeignKey("ProjectStartupId")
+                    b.HasOne("Project", "Project")
+                        .WithMany("Contributions")
+                        .HasForeignKey("ProjectId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Financier");
 
-                    b.Navigation("ProjectStartup");
+                    b.Navigation("Project");
+                });
+
+            modelBuilder.Entity("Project", b =>
+                {
+                    b.Navigation("Contributions");
                 });
 
             modelBuilder.Entity("ApplicationUser", b =>

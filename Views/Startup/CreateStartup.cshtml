@@ -1,0 +1,62 @@
+@model ProjectStartup
+
+<h2>Register Your Startup</h2>
+
+<form asp-action="CreateStartup" method="post">
+    <div class="form-group">
+        <label asp-for="Startupper"></label>
+        <input asp-for="Startupper" class="form-control" />
+        <span asp-validation-for="Startupper" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="CompanyName"></label>
+        <input asp-for="CompanyName" class="form-control" />
+        <span asp-validation-for="CompanyName" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Sector"></label>
+        <input asp-for="Sector" class="form-control" />
+        <span asp-validation-for="Sector" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="ProjectDescription"></label>
+        <textarea asp-for="ProjectDescription" class="form-control"></textarea>
+        <span asp-validation-for="ProjectDescription" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Employees"></label>
+        <input asp-for="Employees" class="form-control" type="number" />
+        <span asp-validation-for="Employees" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="FutureGoals"></label>
+        <textarea asp-for="FutureGoals" class="form-control"></textarea>
+        <span asp-validation-for="FutureGoals" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Country"></label>
+        <input asp-for="Country" class="form-control" />
+        <span asp-validation-for="Country" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="InitialCapital"></label>
+        <input asp-for="InitialCapital" class="form-control" type="number" step="0.01" />
+        <span asp-validation-for="InitialCapital" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="TargetFunding"></label>
+        <input asp-for="TargetFunding" class="form-control" type="number" step="0.01" />
+        <span asp-validation-for="TargetFunding" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="WebsiteLink"></label>
+        <input asp-for="WebsiteLink" class="form-control" />
+        <span asp-validation-for="WebsiteLink" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="CreatedAt"></label>
+        <input asp-for="CreatedAt" class="form-control" type="date" />
+        <span asp-validation-for="CreatedAt" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>

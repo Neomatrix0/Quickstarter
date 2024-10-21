@@ -16,6 +16,6 @@ public class Contribution
     public ApplicationUser Financier { get; set; }  // Navigation to Financier
     
     public int ProjectId { get; set; }  // Foreign key from Project
-    public Project Project { get; set; }  // Navigation to Project
+    public ProjectStartup ProjectStartup { get; set; }  // Navigation to Project
 }
 }

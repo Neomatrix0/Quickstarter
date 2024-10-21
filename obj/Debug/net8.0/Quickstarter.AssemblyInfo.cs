@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Quickstarter")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+28de6ce7db294a5b0022d2c3660435de8d98b7f6")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4221fbbdfd786d842b688d0205afab971b1eb265")]
 [assembly: System.Reflection.AssemblyProductAttribute("Quickstarter")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Quickstarter")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
